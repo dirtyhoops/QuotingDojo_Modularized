@@ -8,12 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './client/static')));
 mongoose.connect('mongodb://localhost/basic_mongoose');
 
-var QuoteSchema = new mongoose.Schema({
-    name: String,
-    quote: String
-})
-
-mongoose.model('Quote', QuoteSchema); // We are setting this Schema in our Models as 'Quote'
+require('./server/models/quote.js');
 
 // Use native promises
 mongoose.Promise = global.Promise;

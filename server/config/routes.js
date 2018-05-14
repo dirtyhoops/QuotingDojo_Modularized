@@ -1,6 +1,3 @@
-var mongoose = require('mongoose');
-var Quote = mongoose.model('Quote'); // We are retrieving this Schema from our Models, named 'Quote'
-
 var quotes = require('../controllers/quotes.js')
 module.exports = function(app) {
     app.get('/', function(req, res) {
